@@ -1,0 +1,17 @@
+# 因为我们Runner执行器设置为docker, 所以这里需要指定docker的版本
+image: alpine:latest
+
+stages:
+  - test
+
+
+# ----------------测试-----------------
+test:
+  stage: test
+  script:
+    - ls
+  when: on_success
+  only:
+   - master
+  tags:
+    - ci-cd
